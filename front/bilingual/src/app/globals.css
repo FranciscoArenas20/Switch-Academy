@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --color-bg: #f5f2ec;
+  --color-text: #0a0a0a;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-card-dark: #0a0a0a;
+  --color-card-purple: #7c3aed;
+  --color-stat-highlight: #2563eb;
+
+  /* Transitions for language switch */
+  --transition-lang: color 0.35s ease, background-color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Typography Helpers ─────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-display), serif;
+}
+
+.font-body {
+  font-family: var(--font-body), sans-serif;
+}
+
+/* ─── Language Transition ────────────────────────────────────── */
+.lang-transition {
+  transition: var(--transition-lang);
+}
+
+/* ─── Accent color utilities (language-aware) ───────────────── */
+.accent-bg {
+  background-color: var(--color-accent);
+}
+
+.accent-text {
+  color: var(--color-accent);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #c5bfb5;
+  border-radius: 3px;
+}
