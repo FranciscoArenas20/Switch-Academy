@@ -1,6 +1,6 @@
 import type { LanguageContent } from "@/types/language";
 
-export const content: Record<"en" | "fr", LanguageContent> = {
+export const content: Record<"en" | "fr" | "es", LanguageContent> = {
   en: {
     nav: {
       pages: "Pages",
@@ -99,6 +99,57 @@ export const content: Record<"en" | "fr", LanguageContent> = {
         title: "Réseau mondial",
         description:
           "Connecte-toi avec des professionnels du monde entier, élargis ton réseau et gagne en perspectives.",
+      },
+    },
+  },
+
+  es: {
+    nav: {
+      pages: "Páginas",
+      courses: "Cursos",
+      about: "Sobre mí",
+      reviews: "Reseñas",
+      blog: "Blog",
+      contact: "Contacto",
+      cta: "Empezar",
+    },
+    hero: {
+      line1: "APRENDE.",
+      line2: "CRECE.",
+      line3: "TRIUNFA.",
+      subtitle:
+        "Aprende inglés o francés con un experto y adquiere las habilidades para impulsar tu carrera.",
+      cta: "Explorar cursos",
+    },
+    stats: {
+      students: { value: "8.000+", label: "Estudiantes felices" },
+      access: { value: "24/7", label: "Acceso al aprendizaje" },
+      satisfaction: { value: "98%", label: "Tasa de satisfacción" },
+      courses: { value: "56", label: "Cursos en línea" },
+    },
+    platform: {
+      title: "UNA PLATAFORMA DISEÑADA PARA EL ÉXITO",
+      subtitle: "Inglés & Francés · Experto",
+      description:
+        "Nuestra plataforma está diseñada para acompañarte en tu aprendizaje y ayudarte a destacar en tu carrera con confianza.",
+      cta: "Ver todos los cursos",
+      progress: "2/8 módulos",
+    },
+    features: {
+      expert: {
+        title: "Aprendizaje con expertos",
+        description:
+          "Aprende con profesionales experimentados que comparten conocimientos prácticos y del mundo real.",
+      },
+      flexible: {
+        title: "Estudio flexible",
+        description:
+          "Accede a los cursos en cualquier momento y desde cualquier lugar, con la libertad de aprender a tu ritmo.",
+      },
+      global: {
+        title: "Red global",
+        description:
+          "Conéctate con profesionales de todo el mundo, amplía tu red y gana nuevas perspectivas.",
       },
     },
   },

@@ -12,7 +12,7 @@ import { content } from "@/lib/content";
 
 interface LanguageContextValue {
   language: Language;
-  toggleLanguage: () => void;
+  setLang: (lang: Language) => void;
   t: (typeof content)["en"];
   isEnglish: boolean;
 }
@@ -22,13 +22,13 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("en");
 
-  const toggleLanguage = useCallback(() => {
-    setLanguage((prev) => (prev === "en" ? "fr" : "en"));
-  }, []);
+  const setLang = useCallback((lang: Language) => {
+    setLanguage(lang);
+}, []);
 
   const value: LanguageContextValue = {
     language,
-    toggleLanguage,
+    setLang,
     t: content[language],
     isEnglish: language === "en",
   };
