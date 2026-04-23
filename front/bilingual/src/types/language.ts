@@ -3,14 +3,15 @@ export type Language = "en" | "fr" | "es" ;
 export interface LanguageContent {
   // Navbar
   nav: {
-    pages: string;
-    courses: string;
-    about: string;
-    reviews: string;
-    blog: string;
-    contact: string;
-    cta: string;
-  };
+  home: string,
+  updates: string,
+  about: string,
+  courses: string,
+  reviews: string,
+  contact: string,
+  info: string,
+  cta: string,
+};
   // Hero
   hero: {
     line1: string;

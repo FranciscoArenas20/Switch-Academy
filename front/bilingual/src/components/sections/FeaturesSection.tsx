@@ -3,33 +3,41 @@
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/language";
 
-const featureImages = {
+const featureImages: Record<string, Record<Language, string>> = {
   expert: {
     en: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=80&fit=crop",
     fr: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80&fit=crop",
+    es: "https://images.unsplash.com/photo-1558222218-b7b54eede3f3?w=400&q=80&fit=crop",
   },
   flexible: {
     en: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80&fit=crop",
     fr: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80&fit=crop",
+    es: "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=400&q=80&fit=crop",
   },
   global: {
     en: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80&fit=crop",
     fr: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80&fit=crop",
+    es: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80&fit=crop",
   },
 };
 
-export default function FeaturesSection() {
-  const { t, isEnglish, language } = useLanguage();
+const globalCardColors: Record<Language, string> = {
+  en: "bg-[#7c3aed]",
+  fr: "bg-[#1E3A5F]",
+  es: "bg-[#16A34A]",
+};
 
-  const lang = language as "en" | "fr";
+export default function FeaturesSection() {
+  const { t, language } = useLanguage();
 
   const features = [
     {
       key: "expert",
       title: t.features.expert.title,
       description: t.features.expert.description,
-      image: featureImages.expert[lang],
+      image: featureImages.expert[language],
       cardClass: "bg-[#0A0A0A]",
       textClass: "text-white",
       subTextClass: "text-white/60",
@@ -38,7 +46,7 @@ export default function FeaturesSection() {
       key: "flexible",
       title: t.features.flexible.title,
       description: t.features.flexible.description,
-      image: featureImages.flexible[lang],
+      image: featureImages.flexible[language],
       cardClass: "bg-[#1a1a2e]",
       textClass: "text-white",
       subTextClass: "text-white/60",
@@ -47,8 +55,8 @@ export default function FeaturesSection() {
       key: "global",
       title: t.features.global.title,
       description: t.features.global.description,
-      image: featureImages.global[lang],
-      cardClass: isEnglish ? "bg-[#7c3aed]" : "bg-[#1E3A5F]",
+      image: featureImages.global[language],
+      cardClass: globalCardColors[language],
       textClass: "text-white",
       subTextClass: "text-white/70",
     },
@@ -101,7 +109,6 @@ function FeatureCard({
         mobile ? "min-h-[200px]" : "aspect-[3/4]"
       )}
     >
-      {/* Background image */}
       <Image
         src={feature.image}
         alt={feature.title}
@@ -110,7 +117,6 @@ function FeatureCard({
         sizes="(max-width: 640px) 100vw, 33vw"
       />
 
-      {/* Content overlay */}
       <div className="absolute inset-0 flex flex-col justify-end p-5">
         <h3
           className={cn(

@@ -3,71 +3,60 @@
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/language";
 
 export default function HeroSection() {
-  const { t, isEnglish } = useLanguage();
+  const { t, language } = useLanguage();
 
-  const accentColor = isEnglish ? "bg-[#2563EB]" : "bg-[#C8102E]";
-  const accentHover = isEnglish ? "hover:bg-[#1d4ed8]" : "hover:bg-[#a50d25]";
+  const accentColors: Record<Language, string> = {
+    en: "bg-[#2563EB]",
+    fr: "bg-[#C8102E]",
+    es: "bg-[#16A34A]",
+  };
 
-  // Different hero images per language
-  const heroImage = isEnglish
-    ? "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&fit=crop&crop=top" // professional woman
-    : "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80&fit=crop&crop=top"; // different professional
+  const accentHovers: Record<Language, string> = {
+    en: "hover:bg-[#1d4ed8]",
+    fr: "hover:bg-[#a50d25]",
+    es: "hover:bg-[#15803d]",
+  };
+
+  const accentColor = accentColors[language];
+  const accentHover = accentHovers[language];
 
   return (
-    <section className="relative min-h-screen pt-14 overflow-hidden bg-[#F5F2EC]">
-      {/* Background subtle grain texture */}
-      <div
-        className="absolute inset-0 opacity-[0.025] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-        }}
-      />
+    <section id="hero" className="relative w-full overflow-hidden bg-[#F5F2EC]">
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[calc(100vh-56px)] items-start">
+      {/* ── DESKTOP ── */}
+      <div className="hidden md:block relative w-full h-screen">
+        {/* Imagen horizontal de fondo */}
+        <Image
+          src="/images/hero.png"
+          alt="Switch Academy"
+          fill
+          priority
+          quality={100}
+          className="object-cover"
+          sizes="100vw"
+        />
 
-          {/* Left: Text content */}
-          <div className="flex flex-col justify-start pt-10 md:pt-16 pb-8 z-10">
-            {/* Headline */}
-            <h1 className="font-display text-[clamp(3.5rem,9vw,6.5rem)] font-extrabold leading-[0.92] tracking-tight text-black mb-6 lang-transition">
-              <span
-                className="block animate-fade-up"
-                style={{ animationDelay: "0ms" }}
-              >
-                {t.hero.line1}
-              </span>
-              <span
-                className="block animate-fade-up"
-                style={{ animationDelay: "80ms" }}
-              >
-                {t.hero.line2}
-              </span>
-              <span
-                className="block animate-fade-up"
-                style={{ animationDelay: "160ms" }}
-              >
+        {/* Difuminado de derecha a izquierda */}
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-[#F5F2EC] via-[#F5F2EC]/80 to-transparent" /> */}
+
+        {/* Contenido encima del blanco */}
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-6xl mx-auto px-8 w-full">
+            <div className="max-w-lg">
+              <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-black mb-4 lang-transition">
+                {t.hero.line1}<br />
+                {t.hero.line2}<br />
                 {t.hero.line3}
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <p
-              className="font-body text-[15px] text-black/55 max-w-xs leading-relaxed mb-8 animate-fade-up lang-transition"
-              style={{ animationDelay: "240ms" }}
-            >
-              {t.hero.subtitle}
-            </p>
-
-            {/* CTA */}
-            <div
-              className="animate-fade-up"
-              style={{ animationDelay: "320ms" }}
-            >
+              </h1>
+              <p className="font-body text-base text-black/55 leading-relaxed mb-8 lang-transition">
+                {t.hero.subtitle}
+              </p>
               <button
                 className={cn(
-                  "px-6 py-3 rounded-full text-white font-body font-medium text-sm",
+                  "px-7 py-3 rounded-full text-white font-body font-medium text-sm",
                   "transition-all duration-300 active:scale-95",
                   accentColor,
                   accentHover
@@ -77,45 +66,62 @@ export default function HeroSection() {
               </button>
             </div>
           </div>
-
-          {/* Right: Hero image */}
-          <div className="relative hidden md:flex justify-end items-end h-full min-h-[calc(100vh-56px)]">
-            <div className="relative w-full h-full">
-              <Image
-                src={heroImage}
-                alt="Alex — Language instructor"
-                fill
-                priority
-                className="object-cover object-top lang-transition"
-                sizes="(max-width: 768px) 0vw, 50vw"
-              />
-              {/* Soft left fade into background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#F5F2EC] via-transparent to-transparent w-1/3" />
-            </div>
-          </div>
-
-          {/* Mobile: image below text */}
-          <div className="md:hidden relative w-full h-64 mt-4 rounded-2xl overflow-hidden">
-            <Image
-              src={heroImage}
-              alt="Alex — Language instructor"
-              fill
-              priority
-              className="object-cover object-top"
-              sizes="100vw"
-            />
-          </div>
         </div>
       </div>
 
-      {/* Stats bar */}
-      <StatsBar />
+      {/* ── MOBILE ── */}
+      <div className="md:hidden relative w-full min-h-screen">
+        {/* Imagen vertical de fondo */}
+        <Image
+          src="/images/hero-mobile.png"
+          alt="Switch Academy"
+          fill
+          priority
+          quality={100}
+          className="object-cover object-top"
+          sizes="100vw"
+        />
+
+        {/* Difuminado de abajo hacia arriba para que el texto sea legible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F5F2EC] via-[#F5F2EC]/50 to-transparent" />
+
+        {/* Contenido en la parte superior */}
+        <div className="relative z-10 px-6 pt-24 pb-8">
+          <h1 className="font-display text-[clamp(1.8rem,8vw,2.8rem)] font-extrabold leading-[0.95] tracking-tight text-black mb-4 lang-transition">
+            {t.hero.line1}<br />
+            {t.hero.line2}<br />
+            {t.hero.line3}
+          </h1>
+          <p className="font-body text-sm text-black/55 leading-relaxed mb-6 lang-transition">
+            {t.hero.subtitle}
+          </p>
+          <button
+            className={cn(
+              "px-6 py-3 rounded-full text-white font-body font-medium text-sm",
+              "transition-all duration-300 active:scale-95",
+              accentColor,
+              accentHover
+            )}
+          >
+            {t.hero.cta}
+          </button>
+        </div>
+      </div>
+            <StatsBar />
     </section>
   );
 }
 
 function StatsBar() {
-  const { t, isEnglish } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const accentColors: Record<Language, string> = {
+    en: "bg-[#2563EB] text-white",
+    fr: "bg-[#C8102E] text-white",
+    es: "bg-[#16A34A] text-white",
+  };
+
+  const accentClass = accentColors[language];
 
   const stats = [
     t.stats.courses,
@@ -134,27 +140,13 @@ function StatsBar() {
               key={i}
               className={cn(
                 "px-6 py-4 border-r border-black/8 last:border-r-0",
-                i === 3
-                  ? isEnglish
-                    ? "bg-[#2563EB] text-white"
-                    : "bg-[#C8102E] text-white"
-                  : "bg-transparent"
+                i === 3 ? accentClass : "bg-transparent"
               )}
             >
-              <p
-                className={cn(
-                  "font-display text-2xl font-bold lang-transition",
-                  i === 3 ? "text-white" : "text-black"
-                )}
-              >
+              <p className={cn("font-display text-2xl font-bold lang-transition", i === 3 ? "text-white" : "text-black")}>
                 {stat.value}
               </p>
-              <p
-                className={cn(
-                  "font-body text-xs mt-0.5 lang-transition",
-                  i === 3 ? "text-white/80" : "text-black/50"
-                )}
-              >
+              <p className={cn("font-body text-xs mt-0.5 lang-transition", i === 3 ? "text-white/80" : "text-black/50")}>
                 {stat.label}
               </p>
             </div>
@@ -168,27 +160,13 @@ function StatsBar() {
               key={i}
               className={cn(
                 "px-6 py-3 border-b border-black/8 last:border-b-0",
-                i === 3
-                  ? isEnglish
-                    ? "bg-[#2563EB] text-white"
-                    : "bg-[#C8102E] text-white"
-                  : "bg-transparent"
+                i === 3 ? accentClass : "bg-transparent"
               )}
             >
-              <p
-                className={cn(
-                  "font-display text-xl font-bold",
-                  i === 3 ? "text-white" : "text-black"
-                )}
-              >
+              <p className={cn("font-display text-xl font-bold", i === 3 ? "text-white" : "text-black")}>
                 {stat.value}
               </p>
-              <p
-                className={cn(
-                  "font-body text-xs",
-                  i === 3 ? "text-white/80" : "text-black/50"
-                )}
-              >
+              <p className={cn("font-body text-xs", i === 3 ? "text-white/80" : "text-black/50")}>
                 {stat.label}
               </p>
             </div>

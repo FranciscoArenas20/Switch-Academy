@@ -3,16 +3,32 @@
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/language";
 
 export default function PlatformSection() {
-  const { t, isEnglish } = useLanguage();
+  const { t, language } = useLanguage();
 
-  const accentColor = isEnglish ? "bg-[#2563EB]" : "bg-[#C8102E]";
-  const accentText = isEnglish ? "text-[#2563EB]" : "text-[#C8102E]";
+  const accentColors: Record<Language, string> = {
+    en: "bg-[#2563EB]",
+    fr: "bg-[#C8102E]",
+    es: "bg-[#16A34A]",
+  };
 
-  const instructorImage = isEnglish
-    ? "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&fit=crop&crop=top"
-    : "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80&fit=crop&crop=top";
+  const accentTexts: Record<Language, string> = {
+    en: "text-[#2563EB]",
+    fr: "text-[#C8102E]",
+    es: "text-[#16A34A]",
+  };
+
+  const instructorImages: Record<Language, string> = {
+    en: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&fit=crop&crop=top",
+    fr: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80&fit=crop&crop=top",
+    es: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80&fit=crop&crop=top",
+  };
+
+  const accentColor = accentColors[language];
+  const accentText = accentTexts[language];
+  const instructorImage = instructorImages[language];
 
   return (
     <section className="py-20 bg-[#F5F2EC]">
@@ -67,13 +83,9 @@ export default function PlatformSection() {
                     <div
                       key={i}
                       className={cn(
-                        "w-2 rounded-sm transition-colors duration-300",
-                        i < 2
-                          ? isEnglish
-                            ? "bg-[#2563EB]"
-                            : "bg-[#C8102E]"
-                          : "bg-black/10"
-                      )}
+  "w-1.5 rounded-sm",
+  i < 2 ? accentColor : "bg-black/10"
+)}
                       style={{ height: `${h * 4}px` }}
                     />
                   ))}
@@ -116,13 +128,9 @@ export default function PlatformSection() {
                   <div
                     key={i}
                     className={cn(
-                      "w-1.5 rounded-sm",
-                      i < 2
-                        ? isEnglish
-                          ? "bg-[#2563EB]"
-                          : "bg-[#C8102E]"
-                        : "bg-black/10"
-                    )}
+  "w-1.5 rounded-sm",
+  i < 2 ? accentColor : "bg-black/10"
+)}
                     style={{ height: `${h * 3}px` }}
                   />
                 ))}

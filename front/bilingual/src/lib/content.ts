@@ -3,14 +3,15 @@ import type { LanguageContent } from "@/types/language";
 export const content: Record<"en" | "fr" | "es", LanguageContent> = {
   en: {
     nav: {
-      pages: "Pages",
-      courses: "Courses",
-      about: "About us",
-      reviews: "Reviews",
-      blog: "Blog",
-      contact: "Contact",
-      cta: "Start",
-    },
+  home: "Home",
+  updates: "Updates",
+  about: "About",
+  courses: "Courses",
+  reviews: "Reviews",
+  contact: "Contact",
+  info: "Info",
+  cta: "Start",
+},
     hero: {
       line1: "LEARN.",
       line2: "GROW.",
@@ -54,14 +55,15 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
 
   fr: {
     nav: {
-      pages: "Pages",
-      courses: "Cours",
-      about: "À propos",
-      reviews: "Avis",
-      blog: "Blog",
-      contact: "Contact",
-      cta: "Commencer",
-    },
+  home: "Accueil",
+  updates: "Actualités",
+  about: "À propos",
+  courses: "Cours",
+  reviews: "Avis",
+  contact: "Contact",
+  info: "Info",
+  cta: "Commencer",
+},
     hero: {
       line1: "APPRENDS.",
       line2: "ÉVOLUE.",
@@ -105,14 +107,15 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
 
   es: {
     nav: {
-      pages: "Páginas",
-      courses: "Cursos",
-      about: "Sobre mí",
-      reviews: "Reseñas",
-      blog: "Blog",
-      contact: "Contacto",
-      cta: "Empezar",
-    },
+  home: "Inicio",
+  updates: "Novedades",
+  about: "Sobre mí",
+  courses: "Cursos",
+  reviews: "Reseñas",
+  contact: "Contacto",
+  info: "Info",
+  cta: "Empezar",
+},
     hero: {
       line1: "APRENDE.",
       line2: "CRECE.",
