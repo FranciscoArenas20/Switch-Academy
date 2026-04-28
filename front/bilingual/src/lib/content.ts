@@ -27,12 +27,12 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
       courses: { value: "56", label: "Online courses" },
     },
     platform: {
-      title: "A PLATFORM DESIGNED FOR SUCCESS",
-      subtitle: "English · Expert-led",
+      title: "About me",
+      subtitle: "English · Expert",
       description:
-        "Our platform is designed to support your English learning journey and help you excel in your career with confidence.",
-      cta: "See all courses",
-      progress: "2/8 modules",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      cta: "Contact me",
+      // progress: "2/8 modules",
     },
     features: {
       expert: {
@@ -79,12 +79,12 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
       courses: { value: "56", label: "Cours en ligne" },
     },
     platform: {
-      title: "UNE PLATEFORME CONÇUE POUR RÉUSSIR",
+      title: "Sur moi",
       subtitle: "Français · Expert",
       description:
-        "Notre plateforme est conçue pour soutenir ton apprentissage du français et t'aider à exceller dans ta carrière avec confiance.",
-      cta: "Voir tous les cours",
-      progress: "2/8 modules",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      cta: "contactez-moi",
+      // progress: "2/8 modules",
     },
     features: {
       expert: {
@@ -131,12 +131,12 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
       courses: { value: "56", label: "Cursos en línea" },
     },
     platform: {
-      title: "UNA PLATAFORMA DISEÑADA PARA EL ÉXITO",
-      subtitle: "Inglés & Francés · Experto",
+      title: "Sobre mí",
+      subtitle: "Español · Nativo",
       description:
-        "Nuestra plataforma está diseñada para acompañarte en tu aprendizaje y ayudarte a destacar en tu carrera con confianza.",
-      cta: "Ver todos los cursos",
-      progress: "2/8 módulos",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      cta: "Contactame",
+      // progress: "2/8 módulos",
     },
     features: {
       expert: {

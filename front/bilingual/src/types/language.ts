@@ -33,7 +33,7 @@ export interface LanguageContent {
     subtitle: string;
     description: string;
     cta: string;
-    progress: string;
+    // progress: string;
   };
   // Features
   features: {

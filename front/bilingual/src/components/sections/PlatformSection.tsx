@@ -31,7 +31,7 @@ export default function PlatformSection() {
   const instructorImage = instructorImages[language];
 
   return (
-    <section className="py-20 bg-[#F5F2EC]">
+    <section id="about" className="py-20 bg-[#F5F2EC]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Desktop layout */}
@@ -60,7 +60,7 @@ export default function PlatformSection() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden bg-black aspect-[4/3]">
               <Image
-                src={instructorImage}
+                src="/images/aboutme.jpeg"
                 alt="Platform instructor"
                 fill
                 className="object-cover object-top opacity-90 lang-transition"
@@ -68,29 +68,7 @@ export default function PlatformSection() {
               />
 
               {/* Progress badge */}
-              <div className="absolute bottom-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg flex items-end gap-3">
-                <div>
-                  <p className="font-display text-xl font-bold text-black leading-none">
-                    2/8
-                  </p>
-                  <p className="font-body text-xs text-black/50 mt-0.5">
-                    {t.platform.progress}
-                  </p>
-                </div>
-                {/* Mini bar chart */}
-                <div className="flex items-end gap-0.5 h-8">
-                  {[3, 5, 4, 7, 6, 8].map((h, i) => (
-                    <div
-                      key={i}
-                      className={cn(
-  "w-1.5 rounded-sm",
-  i < 2 ? accentColor : "bg-black/10"
-)}
-                      style={{ height: `${h * 4}px` }}
-                    />
-                  ))}
-                </div>
-              </div>
+              
 
               {/* Language badge */}
               <div
@@ -110,14 +88,14 @@ export default function PlatformSection() {
           {/* Image first on mobile */}
           <div className="relative rounded-2xl overflow-hidden bg-black aspect-video mb-8">
             <Image
-              src={instructorImage}
+              src="/images/aboutme.jpeg"
               alt="Platform instructor"
               fill
               className="object-cover object-top opacity-90"
               sizes="100vw"
             />
             {/* Progress badge */}
-            <div className="absolute bottom-3 right-3 bg-white rounded-xl px-3 py-2 shadow-lg flex items-end gap-2">
+            {/* <div className="absolute bottom-3 right-3 bg-white rounded-xl px-3 py-2 shadow-lg flex items-end gap-2">
               <div>
                 <p className="font-display text-lg font-bold text-black leading-none">
                   2/8
@@ -135,7 +113,7 @@ export default function PlatformSection() {
                   />
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
 
           <h2 className="font-display text-4xl font-extrabold leading-tight tracking-tight text-black mb-4 lang-transition">
