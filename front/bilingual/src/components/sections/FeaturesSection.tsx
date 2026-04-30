@@ -7,19 +7,19 @@ import type { Language } from "@/types/language";
 
 const featureImages: Record<string, Record<Language, string>> = {
   expert: {
-    en: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=80&fit=crop",
-    fr: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80&fit=crop",
-    es: "https://images.unsplash.com/photo-1558222218-b7b54eede3f3?w=400&q=80&fit=crop",
+    en: "/images/cursos.avif",
+    fr: "/images/cursos.avif",
+    es: "/images/cursos.avif",
   },
   flexible: {
-    en: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80&fit=crop",
-    fr: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80&fit=crop",
-    es: "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=400&q=80&fit=crop",
+    en: "/images/certificados.avif",
+    fr: "/images/certificados.avif",
+    es: "/images/certificados.avif",
   },
   global: {
-    en: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80&fit=crop",
-    fr: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80&fit=crop",
-    es: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80&fit=crop",
+    en: "/images/otros.png",
+    fr: "/images/otros.png",
+    es: "/images/otros.png",
   },
 };
 
@@ -47,7 +47,7 @@ export default function FeaturesSection() {
       title: t.features.flexible.title,
       description: t.features.flexible.description,
       image: featureImages.flexible[language],
-      cardClass: "bg-[#1a1a2e]",
+      cardClass: "bg-[#0A0A0A]",
       textClass: "text-white",
       subTextClass: "text-white/60",
     },
@@ -56,14 +56,14 @@ export default function FeaturesSection() {
       title: t.features.global.title,
       description: t.features.global.description,
       image: featureImages.global[language],
-      cardClass: globalCardColors[language],
+      cardClass: "bg-[#0A0A0A]",
       textClass: "text-white",
       subTextClass: "text-white/70",
     },
   ];
 
   return (
-    <section className="py-6 pb-20 bg-[#F5F2EC]">
+    <section id="cursos" className="py-6 pb-20 bg-[#F5F2EC]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Desktop: 3-column grid */}
@@ -106,7 +106,7 @@ function FeatureCard({
       className={cn(
         "relative rounded-2xl overflow-hidden transition-colors duration-500",
         feature.cardClass,
-        mobile ? "min-h-[200px]" : "aspect-[3/4]"
+        mobile ? "min-h-[200px]" : "aspect-[4/4]"
       )}
     >
       <Image
@@ -117,10 +117,10 @@ function FeatureCard({
         sizes="(max-width: 640px) 100vw, 33vw"
       />
 
-      <div className="absolute inset-0 flex flex-col justify-end p-5">
+      <div className="absolute inset-0 flex flex-col justify-start p-5">
         <h3
           className={cn(
-            "font-display text-lg font-bold mb-2 lang-transition",
+            "font-display text-3xl font-bold mb-2 lang-transition",
             feature.textClass
           )}
         >
@@ -128,7 +128,7 @@ function FeatureCard({
         </h3>
         <p
           className={cn(
-            "font-body text-xs leading-relaxed lang-transition",
+            "font-body text-lg font'bold lang-transition",
             feature.subTextClass
           )}
         >

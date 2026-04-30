@@ -9,7 +9,7 @@ export default function HomePage() {
       <Navbar />
       <HeroSection />
       <PlatformSection />
-      {/* <FeaturesSection /> */}
+      <FeaturesSection />
     </main>
   );
 }

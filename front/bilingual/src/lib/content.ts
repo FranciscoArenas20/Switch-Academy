@@ -36,19 +36,19 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
     },
     features: {
       expert: {
-        title: "Expert-led learning",
+        title: "Regular Courses",
         description:
-          "Learn from experienced industry professionals who share practical, real-world insights.",
+          "Progress through levels, from basic to expert in the language of your choice.",
       },
       flexible: {
-        title: "Flexible study options",
+        title: "Certifications",
         description:
-          "Access courses anytime and anywhere, giving you the freedom to learn at your own pace.",
+          "Get advice and prepare for the language certificate you want to obtain.",
       },
       global: {
-        title: "Global networking",
+        title: "Others",
         description:
-          "Connect with global professionals, expanding your network and gaining diverse perspectives.",
+          "Contact me and let's develop a specialized learning process for you.",
       },
     },
   },
@@ -88,19 +88,19 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
     },
     features: {
       expert: {
-        title: "Apprentissage guidé",
+        title: "Cours réguliers",
         description:
-          "Apprends avec des professionnels expérimentés qui partagent des insights concrets et pratiques.",
+          "Progressez à travers les niveaux, du débutant à l'expert, dans la langue de votre choix.",
       },
       flexible: {
-        title: "Études flexibles",
+        title: "Certifications",
         description:
-          "Accède aux cours à tout moment et de n'importe où, avec la liberté d'apprendre à ton rythme.",
+          "Obtenez des conseils et préparez-vous à la certification linguistique que vous souhaitez obtenir.",
       },
       global: {
-        title: "Réseau mondial",
+        title: "Autres",
         description:
-          "Connecte-toi avec des professionnels du monde entier, élargis ton réseau et gagne en perspectives.",
+          "Contactez-moi et élaborons ensemble un programme d'apprentissage personnalisé.",
       },
     },
   },
@@ -140,19 +140,19 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
     },
     features: {
       expert: {
-        title: "Aprendizaje con expertos",
+        title: "Cursos Regulares",
         description:
-          "Aprende con profesionales experimentados que comparten conocimientos prácticos y del mundo real.",
+          "Avanza mediante niveles, desde basico hasta experto en el idioma de tu preferencia.",
       },
       flexible: {
-        title: "Estudio flexible",
+        title: "Certificaciones",
         description:
-          "Accede a los cursos en cualquier momento y desde cualquier lugar, con la libertad de aprender a tu ritmo.",
+          "Recibe asesoria y preparate para el certificado de idiomas que deseas obtener",
       },
       global: {
-        title: "Red global",
+        title: "Otros",
         description:
-          "Conéctate con profesionales de todo el mundo, amplía tu red y gana nuevas perspectivas.",
+          "Contactame y desarrollemos un proceso de aprendizaje especializado para tí.",
       },
     },
   },
