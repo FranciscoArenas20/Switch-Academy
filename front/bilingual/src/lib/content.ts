@@ -35,6 +35,7 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
       // progress: "2/8 modules",
     },
     features: {
+      title: "Courses",
       expert: {
         title: "Regular Courses",
         description:
@@ -87,6 +88,7 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
       // progress: "2/8 modules",
     },
     features: {
+      title: "Cours",
       expert: {
         title: "Cours réguliers",
         description:
@@ -139,6 +141,7 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
       // progress: "2/8 módulos",
     },
     features: {
+      title: "Cursos",
       expert: {
         title: "Cursos Regulares",
         description:

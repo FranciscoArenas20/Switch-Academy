@@ -37,6 +37,7 @@ export interface LanguageContent {
   };
   // Features
   features: {
+    title: string;
     expert: { title: string; description: string };
     flexible: { title: string; description: string };
     global: { title: string; description: string };

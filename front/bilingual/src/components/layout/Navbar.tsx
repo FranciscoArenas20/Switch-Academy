@@ -6,7 +6,7 @@ import LanguageSwitch from "@/components/ui/LanguageSwitch";
 import { cn } from "@/lib/utils";
 import type { Language } from "@/types/language";
 
-const sectionIds = ["hero", "updates", "about", "cursos", "reviews", "formulario", "contacto"];
+const sectionIds = ["hero", "updates", "about", "cursos", "reviews", "contacto"];
 
 export default function Navbar() {
   const { t, language } = useLanguage();
@@ -28,14 +28,13 @@ export default function Navbar() {
   const accentHover = accentHovers[language];
 
   const navLinks = [
-    t.nav.home,
-    t.nav.updates,
-    t.nav.about,
-    t.nav.courses,
-    t.nav.reviews,
-    t.nav.contact,
-    t.nav.info,
-  ];
+  t.nav.home,      // 0 → hero
+  t.nav.updates,   // 1 → updates
+  t.nav.about,     // 2 → about
+  t.nav.courses,   // 3 → cursos
+  t.nav.reviews,   // 4 → reviews
+  t.nav.contact,   // 5 → contacto
+];
 
   const handleNavClick = (index: number) => {
     const id = sectionIds[index];

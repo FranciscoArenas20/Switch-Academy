@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
+import AdminBar from "@/components/ui/AdminBar";
 
 // Display font — bold, editorial, modern
 const syne = Syne({
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
       <body className="font-body antialiased">
         <LanguageProvider>{children}</LanguageProvider>
+        <AdminBar />
       </body>
     </html>
   );

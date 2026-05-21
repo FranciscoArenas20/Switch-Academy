@@ -2,6 +2,9 @@ import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import PlatformSection from "@/components/sections/PlatformSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
+import ContactSection from "@/components/sections/ContactSection";
+import FormSection from "@/components/sections/FormSection";
+
 
 export default function HomePage() {
   return (
@@ -10,6 +13,8 @@ export default function HomePage() {
       <HeroSection />
       <PlatformSection />
       <FeaturesSection />
+      <FormSection/>
+      <ContactSection />
     </main>
   );
 }

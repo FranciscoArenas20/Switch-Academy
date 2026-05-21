@@ -23,12 +23,6 @@ const featureImages: Record<string, Record<Language, string>> = {
   },
 };
 
-const globalCardColors: Record<Language, string> = {
-  en: "bg-[#7c3aed]",
-  fr: "bg-[#1E3A5F]",
-  es: "bg-[#16A34A]",
-};
-
 export default function FeaturesSection() {
   const { t, language } = useLanguage();
 
@@ -63,8 +57,15 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section id="cursos" className="py-6 pb-20 bg-[#F5F2EC]">
+    <section id="cursos" className="scroll-mt-18 py-20 bg-[#F5F2EC]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Header */}
+        <div className="mb-14">
+          <h2 className="font-display text-[clamp(1.5rem,4vw,3rem)] font-extrabold leading-tight tracking-tight text-black mb-4 lang-transition">
+            {t.features.title}
+          </h2>
+        </div>
 
         {/* Desktop: 3-column grid */}
         <div className="hidden sm:grid sm:grid-cols-3 gap-4">
@@ -106,7 +107,7 @@ function FeatureCard({
       className={cn(
         "relative rounded-2xl overflow-hidden transition-colors duration-500",
         feature.cardClass,
-        mobile ? "min-h-[200px]" : "aspect-[4/4]"
+        mobile ? "min-h-[200px]" : "aspect-[3/4]"
       )}
     >
       <Image
@@ -120,7 +121,7 @@ function FeatureCard({
       <div className="absolute inset-0 flex flex-col justify-start p-5">
         <h3
           className={cn(
-            "font-display text-3xl font-bold mb-2 lang-transition",
+            "font-display text-2xl lg:text-3xl font-bold mb-2 lang-transition",
             feature.textClass
           )}
         >
@@ -128,7 +129,7 @@ function FeatureCard({
         </h3>
         <p
           className={cn(
-            "font-body text-lg font'bold lang-transition",
+            "font-body text-lg lang-transition",
             feature.subTextClass
           )}
         >
