@@ -6,7 +6,7 @@ import LanguageSwitch from "@/components/ui/LanguageSwitch";
 import { cn } from "@/lib/utils";
 import type { Language } from "@/types/language";
 
-const sectionIds = ["hero", "updates", "about", "cursos", "reviews", "contacto"];
+  const sectionIds = ["hero", "blog", "about", "cursos", "reviews", "contacto"];
 
 export default function Navbar() {
   const { t, language } = useLanguage();
@@ -29,7 +29,7 @@ export default function Navbar() {
 
   const navLinks = [
   t.nav.home,      // 0 → hero
-  t.nav.updates,   // 1 → updates
+  t.nav.blog,      // 1 → blog
   t.nav.about,     // 2 → about
   t.nav.courses,   // 3 → cursos
   t.nav.reviews,   // 4 → reviews

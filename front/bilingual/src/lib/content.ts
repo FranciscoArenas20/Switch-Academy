@@ -4,7 +4,7 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
   en: {
     nav: {
   home: "Home",
-  updates: "Updates",
+  blog: "Blog",
   about: "About",
   courses: "Courses",
   reviews: "Reviews",
@@ -52,12 +52,22 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
           "Contact me and let's develop a specialized learning process for you.",
       },
     },
+    blog: {
+      title: "Latest from the Blog",
+      subtitle:
+        "Tips, guides, and insights to help you on your language learning journey.",
+    },
+    reviewsSection: {
+      title: "What Our Students Say",
+      subtitle:
+        "Real stories from real students who transformed their language skills with Switch Academy.",
+    },
   },
 
   fr: {
     nav: {
   home: "Accueil",
-  updates: "Actualités",
+  blog: "Blog",
   about: "À propos",
   courses: "Cours",
   reviews: "Avis",
@@ -105,12 +115,22 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
           "Contactez-moi et élaborons ensemble un programme d'apprentissage personnalisé.",
       },
     },
+    blog: {
+      title: "Dernières du Blog",
+      subtitle:
+        "Conseils, guides et astuces pour vous accompagner dans votre apprentissage linguistique.",
+    },
+    reviewsSection: {
+      title: "Ce que disent nos élèves",
+      subtitle:
+        "Des témoignages authentiques d'élèves qui ont transformé leurs compétences linguistiques avec Switch Academy.",
+    },
   },
 
   es: {
     nav: {
   home: "Inicio",
-  updates: "Novedades",
+  blog: "Blog",
   about: "Sobre mí",
   courses: "Cursos",
   reviews: "Reseñas",
@@ -157,6 +177,16 @@ export const content: Record<"en" | "fr" | "es", LanguageContent> = {
         description:
           "Contactame y desarrollemos un proceso de aprendizaje especializado para tí.",
       },
+    },
+    blog: {
+      title: "Últimas del Blog",
+      subtitle:
+        "Consejos, guías e ideas para ayudarte en tu viaje de aprendizaje de idiomas.",
+    },
+    reviewsSection: {
+      title: "Lo que dicen nuestros estudiantes",
+      subtitle:
+        "Historias reales de estudiantes que transformaron sus habilidades lingüísticas con Switch Academy.",
     },
   },
 };

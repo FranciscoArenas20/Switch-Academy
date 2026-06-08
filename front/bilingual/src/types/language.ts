@@ -4,7 +4,7 @@ export interface LanguageContent {
   // Navbar
   nav: {
   home: string,
-  updates: string,
+  blog: string,
   about: string,
   courses: string,
   reviews: string,
@@ -41,5 +41,15 @@ export interface LanguageContent {
     expert: { title: string; description: string };
     flexible: { title: string; description: string };
     global: { title: string; description: string };
+  };
+  // Blog section
+  blog: {
+    title: string;
+    subtitle: string;
+  };
+  // Reviews section
+  reviewsSection: {
+    title: string;
+    subtitle: string;
   };
 }

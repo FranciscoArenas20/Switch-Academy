@@ -91,6 +91,14 @@ export default function DashboardPage() {
             </p>
           </div>
           <div className="flex items-center gap-3">
+            <a
+              href="/studio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-full bg-[#2563EB] text-white font-body text-sm hover:bg-[#1d4ed8] transition-all"
+            >
+              + Agregar nuevo post
+            </a>
             <button
               onClick={() => router.push("/")}
               className="px-4 py-2 rounded-full border border-black/15 bg-white text-black font-body text-sm hover:bg-black/5 transition-all"

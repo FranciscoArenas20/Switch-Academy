@@ -16,7 +16,7 @@ const formContent = {
       idioma: { label: "Which language?", placeholder: "Select an option" },
       mensaje: { label: "Message (optional)", placeholder: "Tell Alex about your goals..." },
     },
-    options: ["English", "French", "Both"],
+    options: ["English", "French", "Spanish"],
     cta: "Send message",
     sending: "Sending...",
     success: "Message sent! Alex will contact you soon.",
@@ -32,7 +32,7 @@ const formContent = {
       idioma: { label: "Quelle langue ?", placeholder: "Choisir une option" },
       mensaje: { label: "Message (optionnel)", placeholder: "Parle à Alex de tes objectifs..." },
     },
-    options: ["Anglais", "Français", "Les deux"],
+    options: ["Anglais", "Français", "Espagnol"],
     cta: "Envoyer le message",
     sending: "Envoi en cours...",
     success: "Message envoyé ! Alex te contactera bientôt.",
@@ -48,7 +48,7 @@ const formContent = {
       idioma: { label: "¿Qué idioma te interesa?", placeholder: "Selecciona una opción" },
       mensaje: { label: "Mensaje (opcional)", placeholder: "Cuéntale a Alex tus objetivos..." },
     },
-    options: ["Inglés", "Francés", "Ambos"],
+    options: ["Inglés", "Francés", "Español"],
     cta: "Enviar mensaje",
     sending: "Enviando...",
     success: "¡Mensaje enviado! Alex te contactará pronto.",
@@ -66,6 +66,7 @@ interface FormData {
 
 export default function FormSection() {
   const { language } = useLanguage();
+  const pageLang = language;
   const c = formContent[language];
 
   const [formData, setFormData] = useState<FormData>({
@@ -114,7 +115,7 @@ export default function FormSection() {
       const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, pageLang }),
       });
 
       if (!res.ok) throw new Error();

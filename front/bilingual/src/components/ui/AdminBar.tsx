@@ -34,15 +34,15 @@ export default function AdminBar() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
-      {/* Botón Ver Leads */}
+      {/* Botón Admin */}
       <Link
         href="/admin/dashboard"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-black text-white font-body text-sm font-medium shadow-lg hover:bg-black/80 transition-all"
       >
-        <span>📋</span>
-        <span>Ver Leads</span>
+        <span>⚙️</span>
+        <span>Admin</span>
       </Link>
 
       {/* Botón cerrar sesión */}

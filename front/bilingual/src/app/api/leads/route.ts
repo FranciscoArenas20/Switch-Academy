@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabaseAdmin";
+import {
+  sendOwnerNotification,
+  sendLeadConfirmation,
+} from "@/lib/email";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { nombre, email, telefono, idioma, mensaje } = body;
+    const { nombre, email, telefono, idioma, mensaje, pageLang } = body;
 
     // Validación de campos obligatorios
     if (!nombre || !email || !idioma) {
@@ -34,6 +38,12 @@ export async function POST(req: NextRequest) {
     ]);
 
     if (error) throw error;
+
+    // Enviar notificación al owner y confirmación al lead
+    await Promise.allSettled([
+      sendOwnerNotification({ nombre, email, telefono: telefono || null, idioma, mensaje: mensaje || null }),
+      sendLeadConfirmation(nombre, email, pageLang || "en"),
+    ]);
 
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (error) {
