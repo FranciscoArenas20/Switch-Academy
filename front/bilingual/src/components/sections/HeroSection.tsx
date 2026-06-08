@@ -44,7 +44,7 @@ export default function HeroSection() {
 
         {/* Contenido encima del blanco */}
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-6xl mx-auto px-8 w-full">
+          <div className="max-w-7xl mx-auto px-8 w-full">
             <div className="max-w-lg">
               <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-black mb-4 lang-transition">
                 {t.hero.line1}<br />
@@ -55,6 +55,7 @@ export default function HeroSection() {
                 {t.hero.subtitle}
               </p>
               <button
+                onClick={() => document.getElementById("cursos")?.scrollIntoView({ behavior: "smooth" })}
                 className={cn(
                   "px-7 py-3 rounded-full text-white font-body font-medium text-sm",
                   "transition-all duration-300 active:scale-95",
@@ -96,6 +97,7 @@ export default function HeroSection() {
             {t.hero.subtitle}
           </p>
           <button
+            onClick={() => document.getElementById("cursos")?.scrollIntoView({ behavior: "smooth" })}
             className={cn(
               "px-6 py-3 rounded-full text-white font-body font-medium text-sm",
               "transition-all duration-300 active:scale-95",
@@ -132,7 +134,7 @@ function StatsBar() {
 
   return (
     <div className="relative z-10 bg-white/80 backdrop-blur-sm border-t border-black/8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Desktop: horizontal row */}
         <div className="hidden sm:grid sm:grid-cols-4">
           {stats.map((stat, i) => (

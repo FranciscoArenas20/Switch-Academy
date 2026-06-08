@@ -32,7 +32,7 @@ export default function PlatformSection() {
 
   return (
     <section id="about" className="py-20 bg-[#F5F2EC]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Desktop layout */}
         <div className="hidden md:grid md:grid-cols-2 gap-12 items-center">
@@ -46,6 +46,7 @@ export default function PlatformSection() {
               {t.platform.description}
             </p>
             <button
+              onClick={() => document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })}
               className={cn(
                 "px-6 py-2.5 rounded-full border-2 border-black text-black",
                 "font-body font-medium text-sm",
@@ -122,7 +123,10 @@ export default function PlatformSection() {
           <p className="font-body text-sm text-black/55 leading-relaxed mb-6 lang-transition">
             {t.platform.description}
           </p>
-          <button className="px-6 py-2.5 rounded-full border-2 border-black text-black font-body font-medium text-sm hover:bg-black hover:text-white transition-all duration-300">
+          <button
+            onClick={() => document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })}
+            className="px-6 py-2.5 rounded-full border-2 border-black text-black font-body font-medium text-sm hover:bg-black hover:text-white transition-all duration-300"
+          >
             {t.platform.cta}
           </button>
         </div>

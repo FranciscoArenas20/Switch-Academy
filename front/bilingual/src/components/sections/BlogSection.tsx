@@ -34,7 +34,7 @@ export default function BlogSection() {
 
   return (
     <section id="blog" className="scroll-mt-16 py-20 bg-[#F5F2EC]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="font-display text-[clamp(1.5rem,4vw,3rem)] font-extrabold leading-tight tracking-tight text-black mb-3 lang-transition">
             {t.blog.title}

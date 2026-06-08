@@ -138,7 +138,7 @@ export default function InfiniteCarousel<T>({
 
       <button
         onClick={goPrev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm border border-black/10 shadow-md flex items-center justify-center text-black/50 hover:text-black hover:bg-white hover:shadow-lg transition-all z-10 opacity-0 group-hover:opacity-100"
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm border border-black/10 shadow-md flex items-center justify-center text-black/50 hover:text-black hover:bg-white hover:shadow-lg transition-all z-10 opacity-100 md:opacity-0 md:group-hover:opacity-100"
         aria-label="Previous"
       >
         <svg
@@ -156,7 +156,7 @@ export default function InfiniteCarousel<T>({
       </button>
       <button
         onClick={goNext}
-        className="absolute right-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm border border-black/10 shadow-md flex items-center justify-center text-black/50 hover:text-black hover:bg-white hover:shadow-lg transition-all z-10 opacity-0 group-hover:opacity-100"
+        className="absolute right-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm border border-black/10 shadow-md flex items-center justify-center text-black/50 hover:text-black hover:bg-white hover:shadow-lg transition-all z-10 opacity-100 md:opacity-0 md:group-hover:opacity-100"
         aria-label="Next"
       >
         <svg
