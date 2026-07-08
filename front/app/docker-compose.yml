@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder        # use builder stage for hot-reload in dev
+    container_name: switch-academy-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app               # mount source for live reload
+      - /app/node_modules    # keep container node_modules isolated
+      - /app/.next           # keep .next build cache isolated
+    env_file:
+      - .env.local           # create this from .env.example
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    restart: unless-stopped
+
+networks:
+  default:
+    name: switch-academy-network

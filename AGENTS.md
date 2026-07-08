@@ -1,4 +1,4 @@
-# Bilingual — AGENTS.md
+# Switch Academy — AGENTS.md
 
 ## Working agreement
 
@@ -6,18 +6,13 @@ El agente nunca debe ejecutar cambios tecnológicos que el usuario no entienda. 
 
 ## Project layout
 
-Two independent Node.js projects, **no workspace tooling**. Each has its own `package.json`, `node_modules/`, and lockfile.
-
-| Path | Tech | Status |
-|------|------|--------|
-| `front/bilingual/` | Next.js 15 (App Router), React 19, Tailwind v4, Framer Motion | Active landing page |
-| `back/bilingual/` | NestJS 11, Jest | Scaffold only (boilerplate) |
+Single Next.js project at `front/app/`.
 
 ## Commands
 
-Run all commands from the respective package directory.
+Run all commands from the frontend directory.
 
-### Frontend (`front/bilingual/`)
+### Frontend (`front/app/`)
 
 ```bash
 npm run dev        # dev server (localhost:3000)
@@ -28,21 +23,10 @@ npm run type-check # tsc --noEmit
 
 **No test framework installed in frontend.**
 
-### Backend (`back/bilingual/`)
-
-```bash
-npm run start:dev   # nest start --watch
-npm run build       # nest build -> dist/
-npm run lint        # eslint + prettier (--fix)
-npm run format      # prettier --write (separate command)
-npm run test        # unit (Jest, *.spec.ts)
-npm run test:e2e    # e2e (Jest, test/jest-e2e.json)
-```
-
 ### Docker (frontend)
 
 ```bash
-docker-compose up   # front/bilingual/ — targets `builder` stage, hot-reload
+docker-compose up   # front/app/ — targets `builder` stage, hot-reload
 docker build .      # multi-stage, node:20-alpine output
 ```
 
@@ -63,8 +47,8 @@ docker build .      # multi-stage, node:20-alpine output
 
 ## Environment
 
-`.env.local` at `front/bilingual/` (committed, contains real Supabase keys). No `.env.example` exists. Required vars: Supabase (URL+anon+service_role), Sanity (projectId+dataset+token), `NEXT_PUBLIC_SITE_URL`.
+`.env.local` at `front/app/` (committed, contains real Supabase keys). No `.env.example` exists. Required vars: Supabase (URL+anon+service_role), `NEXT_PUBLIC_SITE_URL`.
 
 ## Reference
 
-`front/bilingual/CLAUDE.md` has detailed frontend guidance — **note**: it's outdated (says EN/FR only, mentions `toggleLanguage` instead of `setLang`). Trust this AGENTS.md for corrections.
+`front/app/CLAUDE.md` has detailed frontend guidance — **note**: it's outdated (says EN/FR only, mentions `toggleLanguage` instead of `setLang`). Trust this AGENTS.md for corrections.
